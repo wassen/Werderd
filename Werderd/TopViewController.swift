@@ -8,11 +8,27 @@
 
 import UIKit
 
-class TopViewController: UIViewController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.backgroundColor = .white
+class TopViewController: UICollectionViewController {
+
+    override func loadView() {
+        self.view = UIView()
+
+        self.navigationItem.title = "title"
+
+        self.collectionView?.backgroundColor = .blue
+
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 100, height: 100)
+        let collectionView = UICollectionView(frame: CGRect(), collectionViewLayout: layout)
+        collectionView.backgroundColor = .red
+
+        self.view.addSubview(collectionView)
+
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        collectionView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
+        collectionView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
     }
 
     override func didReceiveMemoryWarning() {
