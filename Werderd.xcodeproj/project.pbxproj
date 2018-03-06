@@ -10,7 +10,6 @@
 		D4AD53E21F45F61600B3AB1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AD53E11F45F61600B3AB1B /* AppDelegate.swift */; };
 		D4AD53E41F45F61600B3AB1B /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AD53E31F45F61600B3AB1B /* TopViewController.swift */; };
 		D4AD53E91F45F61600B3AB1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4AD53E81F45F61600B3AB1B /* Assets.xcassets */; };
-		D4AD53EC1F45F61600B3AB1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4AD53EA1F45F61600B3AB1B /* LaunchScreen.storyboard */; };
 		D4AD53F71F45F61600B3AB1B /* WerderdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AD53F61F45F61600B3AB1B /* WerderdTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +28,6 @@
 		D4AD53E11F45F61600B3AB1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4AD53E31F45F61600B3AB1B /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		D4AD53E81F45F61600B3AB1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D4AD53EB1F45F61600B3AB1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D4AD53ED1F45F61600B3AB1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4AD53F21F45F61600B3AB1B /* WerderdTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WerderdTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4AD53F61F45F61600B3AB1B /* WerderdTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WerderdTests.swift; sourceTree = "<group>"; };
@@ -78,7 +76,6 @@
 				D4AD53E11F45F61600B3AB1B /* AppDelegate.swift */,
 				D4AD53E31F45F61600B3AB1B /* TopViewController.swift */,
 				D4AD53E81F45F61600B3AB1B /* Assets.xcassets */,
-				D4AD53EA1F45F61600B3AB1B /* LaunchScreen.storyboard */,
 				D4AD53ED1F45F61600B3AB1B /* Info.plist */,
 			);
 			path = Werderd;
@@ -177,7 +174,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4AD53EC1F45F61600B3AB1B /* LaunchScreen.storyboard in Resources */,
 				D4AD53E91F45F61600B3AB1B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,17 +214,6 @@
 			targetProxy = D4AD53F31F45F61600B3AB1B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		D4AD53EA1F45F61600B3AB1B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D4AD53EB1F45F61600B3AB1B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D4AD53F91F45F61600B3AB1B /* Debug */ = {
