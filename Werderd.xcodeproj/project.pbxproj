@@ -11,6 +11,7 @@
 		D4AD53E41F45F61600B3AB1B /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AD53E31F45F61600B3AB1B /* TopViewController.swift */; };
 		D4AD53E91F45F61600B3AB1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4AD53E81F45F61600B3AB1B /* Assets.xcassets */; };
 		D4AD53F71F45F61600B3AB1B /* WerderdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AD53F61F45F61600B3AB1B /* WerderdTests.swift */; };
+		D4FB69612050358300CBB17E /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4FB69602050358300CBB17E /* Realm.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +33,7 @@
 		D4AD53F21F45F61600B3AB1B /* WerderdTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WerderdTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4AD53F61F45F61600B3AB1B /* WerderdTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WerderdTests.swift; sourceTree = "<group>"; };
 		D4AD53F81F45F61600B3AB1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4FB69602050358300CBB17E /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4FB69612050358300CBB17E /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +61,7 @@
 				D4AD53E01F45F61600B3AB1B /* Werderd */,
 				D4AD53F51F45F61600B3AB1B /* WerderdTests */,
 				D4AD53DF1F45F61600B3AB1B /* Products */,
+				D4FB695F2050358300CBB17E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +94,14 @@
 			path = WerderdTests;
 			sourceTree = "<group>";
 		};
+		D4FB695F2050358300CBB17E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4FB69602050358300CBB17E /* Realm.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -100,6 +112,7 @@
 				D4AD53DA1F45F61600B3AB1B /* Sources */,
 				D4AD53DB1F45F61600B3AB1B /* Frameworks */,
 				D4AD53DC1F45F61600B3AB1B /* Resources */,
+				D4FB695D2050327C00CBB17E /* Run Script for Carthage */,
 			);
 			buildRules = (
 			);
@@ -186,6 +199,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D4FB695D2050327C00CBB17E /* Run Script for Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+			);
+			name = "Run Script for Carthage";
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Realm.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D4AD53DA1F45F61600B3AB1B /* Sources */ = {
@@ -316,6 +350,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QJX6MNRW46;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Werderd/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.wassen.Werderd;
@@ -329,6 +367,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QJX6MNRW46;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Werderd/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.wassen.Werderd;
