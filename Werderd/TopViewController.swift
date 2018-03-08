@@ -9,10 +9,30 @@
 import UIKit
 
 class TopViewController: UICollectionViewController {
+
+    var werderdTypes: [String] = WerderdTypeModel.default.types
+
+    @objc func reloadView() {
+        self.collectionView!.reloadData()
+        print("reloading")
+    }
+
     override func loadView() {
         self.view = UIView()
         self.navigationItem.title = "title"
         self.collectionView = self.newCollectionView()
+
+        let button = UIButton()
+        button.setTitle("Tap Me!", for: .normal)
+        button.backgroundColor = .white
+        button.setTitleColor(.black, for: .normal)
+        button.frame = CGRect(
+            origin: CGPoint(x: 100, y: 400),
+            size: CGSize(width: 100, height: 50)
+        )
+        button.addTarget(self, action: #selector(tapped), for: .touchUpInside)
+
+        self.view.addSubview(button)
 
 //        collectionView.translatesAutoresizingMaskIntoConstraints = false
 //        collectionView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
@@ -20,12 +40,23 @@ class TopViewController: UICollectionViewController {
 //        collectionView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
 //        collectionView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
     }
+    
+    @objc func tapped() {
+        WerderdTypeModel.default.types = ["wassen"]
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView!.delegate = self
         self.collectionView!.dataSource = self
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(reloadView),
+            name: Notification.Name("WerderdTypeModel_types"),
+            object: nil
+        )
     }
 
     override func didReceiveMemoryWarning() {
