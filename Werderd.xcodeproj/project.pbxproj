@@ -13,6 +13,7 @@
 		D4AD53F71F45F61600B3AB1B /* WerderdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AD53F61F45F61600B3AB1B /* WerderdTests.swift */; };
 		D4FB69612050358300CBB17E /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4FB69602050358300CBB17E /* Realm.framework */; };
 		D4FB696420518A5E00CBB17E /* WerderdType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB696320518A5E00CBB17E /* WerderdType.swift */; };
+		D4FB6967205985A900CBB17E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB6966205985A900CBB17E /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		D4AD53F81F45F61600B3AB1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4FB69602050358300CBB17E /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		D4FB696320518A5E00CBB17E /* WerderdType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WerderdType.swift; sourceTree = "<group>"; };
+		D4FB6966205985A900CBB17E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		D4AD53E01F45F61600B3AB1B /* Werderd */ = {
 			isa = PBXGroup;
 			children = (
+				D4FB69652059859000CBB17E /* Constants */,
 				D4AD53E11F45F61600B3AB1B /* AppDelegate.swift */,
 				D4AD53E31F45F61600B3AB1B /* TopViewController.swift */,
 				D4AD53E81F45F61600B3AB1B /* Assets.xcassets */,
@@ -111,6 +114,14 @@
 				D4FB696320518A5E00CBB17E /* WerderdType.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D4FB69652059859000CBB17E /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				D4FB6966205985A900CBB17E /* Colors.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4AD53E41F45F61600B3AB1B /* TopViewController.swift in Sources */,
+				D4FB6967205985A900CBB17E /* Colors.swift in Sources */,
 				D4FB696420518A5E00CBB17E /* WerderdType.swift in Sources */,
 				D4AD53E21F45F61600B3AB1B /* AppDelegate.swift in Sources */,
 			);

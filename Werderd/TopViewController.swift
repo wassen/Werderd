@@ -94,10 +94,10 @@ class TopViewController: UICollectionViewController {
         )
         
         let colors = [
-            UIColor.red,
-            UIColor.blue,
-            UIColor.green,
-            UIColor.yellow
+            Colors.orange.color,
+            Colors.orange.color,
+            Colors.cyan.color,
+            Colors.purple.color
         ]
         cell.backgroundColor = colors[indexPath.row]
         return cell
