@@ -39,10 +39,23 @@ class TopViewController: UICollectionViewController {
 //        collectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
 //        collectionView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
 //        collectionView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+
+        self.navigationItem.setRightBarButton(
+            UIBarButtonItem(
+                barButtonSystemItem: UIBarButtonSystemItem.add,
+                target             : self,
+                action             : #selector(add)
+            ),
+            animated           : true
+        )
     }
-    
+
     @objc func tapped() {
         WerderdTypeModel.default.types = ["wassen"]
+    }
+
+    @objc func add() {
+        WerderdTypeModel.default.types.append("appended")
     }
 
     override func viewDidLoad() {
@@ -68,7 +81,7 @@ class TopViewController: UICollectionViewController {
         _ collectionView              : UICollectionView,
         numberOfItemsInSection section: Int
         ) -> Int {
-        return 3
+        return WerderdTypeModel.default.types.count
     }
 
     override func collectionView(
