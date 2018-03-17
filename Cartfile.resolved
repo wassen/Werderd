@@ -1,1 +1,2 @@
-github "realm/realm-cocoa" "v3.1.1"
+github "realm/realm-cocoa" "v3.2.0"
+github "robb/Cartography" "3.0.1"
