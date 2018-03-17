@@ -60,7 +60,11 @@ class TopViewController: UICollectionViewController {
     }
 
     @objc func add() {
-        WerderdTypeModel.default.types.append("appended")
+//        WerderdTypeModel.default.types.append("appended")
+        let vc = AddWordViewController()
+//        vc.modalPresentationStyle = .fullScreen
+//        vc.modalTransitionStyle   = .flipHorizontal
+        self.present(vc, animated: true)
     }
 
     override func viewDidLoad() {
@@ -98,13 +102,7 @@ class TopViewController: UICollectionViewController {
             for                : indexPath
         )
         
-        let colors = [
-            Colors.orange.color,
-            Colors.orange.color,
-            Colors.cyan.color,
-            Colors.purple.color
-        ]
-        cell.backgroundColor = colors[indexPath.row]
+        cell.backgroundColor = Colors.cyan.color
         return cell
     }
 }
