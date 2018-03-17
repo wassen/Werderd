@@ -14,8 +14,8 @@ struct WerderdTypeModel {
     var types: [String] {
         didSet {
             NotificationCenter.default.post(
-                name: Notification.Name("WerderdTypeModel_types"),
-                object: self.types
+                name  : Notification.Name("WerderdTypeModel_types"),
+                object: nil
             )
         }
     }

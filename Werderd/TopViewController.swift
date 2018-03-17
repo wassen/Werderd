@@ -21,6 +21,7 @@ class TopViewController: UICollectionViewController {
         self.view = UIView()
         self.navigationItem.title = "title"
         self.collectionView = self.newCollectionView()
+        self.collectionView!.backgroundColor = Colors.orange.color
 
         let button = UIButton()
         button.setTitle("Tap Me!", for: .normal)
@@ -30,7 +31,11 @@ class TopViewController: UICollectionViewController {
             origin: CGPoint(x: 100, y: 400),
             size: CGSize(width: 100, height: 50)
         )
-        button.addTarget(self, action: #selector(tapped), for: .touchUpInside)
+        button.addTarget(
+            self,
+            action: #selector(tapped),
+            for   : .touchUpInside
+        )
 
         self.view.addSubview(button)
 
