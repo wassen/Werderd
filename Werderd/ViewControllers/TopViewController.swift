@@ -60,7 +60,6 @@ class TopViewController: UICollectionViewController {
     }
 
     @objc func add() {
-//        WerderdTypeModel.default.types.append("appended")
         let vc = AddWordViewController()
 //        vc.modalPresentationStyle = .fullScreen
 //        vc.modalTransitionStyle   = .flipHorizontal

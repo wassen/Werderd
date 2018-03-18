@@ -18,6 +18,12 @@ class AddWordViewController: UIViewController {
         self.okButton.backgroundColor = .white
         self.okButton.setTitle("button", for: .normal)
 
+        self.okButton.addTarget(
+            self,
+            action: #selector(tapped),
+            for   : .touchUpInside
+        )
+
         self.view.addSubview(okButton)
         constrain(self.okButton, self.view) { okButton, view in
 //            okButton.width   == 100
@@ -27,5 +33,10 @@ class AddWordViewController: UIViewController {
         }
 
         self.view.backgroundColor = .cyan
+    }
+
+    @objc func tapped() {
+        WerderdTypeModel.default.types.append("appended")
+        self.dismiss(animated: true)
     }
 }
