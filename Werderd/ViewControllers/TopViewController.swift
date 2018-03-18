@@ -21,7 +21,7 @@ class TopViewController: UICollectionViewController {
         self.view = UIView()
         self.navigationItem.title = "title"
         self.collectionView = self.newCollectionView()
-        self.collectionView!.backgroundColor = Colors.orange.color
+        self.collectionView!.backgroundColor = .white
 
         let button = UIButton()
         button.setTitle("Tap Me!", for: .normal)
@@ -102,7 +102,7 @@ class TopViewController: UICollectionViewController {
             for                : indexPath
         )
         
-        cell.backgroundColor = Colors.cyan.color
+        cell.backgroundColor = .main
         return cell
     }
 }

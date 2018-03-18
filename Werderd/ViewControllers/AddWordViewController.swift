@@ -15,7 +15,7 @@ class AddWordViewController: UIViewController {
     override func loadView(){
         self.view = UIView()
         self.okButton = UIButton()
-        self.okButton.backgroundColor = Colors.purple.color
+        self.okButton.backgroundColor = .white
         self.okButton.setTitle("button", for: .normal)
 
         self.view.addSubview(okButton)
@@ -26,6 +26,6 @@ class AddWordViewController: UIViewController {
             okButton.centerY == view.centerY
         }
 
-        self.view.backgroundColor = Colors.cyan.color
+        self.view.backgroundColor = .cyan
     }
 }

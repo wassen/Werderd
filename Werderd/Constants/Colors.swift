@@ -9,10 +9,16 @@
 import Foundation
 import UIKit
 
-enum Colors: String {
-    case cyan = "#15dab6"
-    case orange = "#ffc410"
-    case purple = "#a882f6"
+extension UIColor {
+    static let main   = Colors.main.color
+    static let base   = Colors.base.color
+    static let accent = Colors.accent.color
+}
+
+private enum Colors: String {
+    case main   = "#3abc98"
+    case base   = "#03D1AB"
+    case accent = "#FFF44B"
 
     var color: UIColor {
         return UIColor(
