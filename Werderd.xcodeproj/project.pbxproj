@@ -11,6 +11,7 @@
 		D4AD53E41F45F61600B3AB1B /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AD53E31F45F61600B3AB1B /* TopViewController.swift */; };
 		D4AD53E91F45F61600B3AB1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4AD53E81F45F61600B3AB1B /* Assets.xcassets */; };
 		D4AD53F71F45F61600B3AB1B /* WerderdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AD53F61F45F61600B3AB1B /* WerderdTests.swift */; };
+		D4D05646205EB4EF000F5CF2 /* Floaty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D05645205EB4EF000F5CF2 /* Floaty.framework */; };
 		D4FB69612050358300CBB17E /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4FB69602050358300CBB17E /* Realm.framework */; };
 		D4FB696420518A5E00CBB17E /* WerderdType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB696320518A5E00CBB17E /* WerderdType.swift */; };
 		D4FB6967205985A900CBB17E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB6966205985A900CBB17E /* Colors.swift */; };
@@ -37,6 +38,7 @@
 		D4AD53F21F45F61600B3AB1B /* WerderdTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WerderdTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4AD53F61F45F61600B3AB1B /* WerderdTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WerderdTests.swift; sourceTree = "<group>"; };
 		D4AD53F81F45F61600B3AB1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4D05645205EB4EF000F5CF2 /* Floaty.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Floaty.framework; path = Carthage/Build/iOS/Floaty.framework; sourceTree = "<group>"; };
 		D4FB69602050358300CBB17E /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		D4FB696320518A5E00CBB17E /* WerderdType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WerderdType.swift; sourceTree = "<group>"; };
 		D4FB6966205985A900CBB17E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -49,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4D05646205EB4EF000F5CF2 /* Floaty.framework in Frameworks */,
 				D4FB696C205D618100CBB17E /* Cartography.framework in Frameworks */,
 				D4FB69612050358300CBB17E /* Realm.framework in Frameworks */,
 			);
@@ -108,6 +111,7 @@
 		D4FB695F2050358300CBB17E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D4D05645205EB4EF000F5CF2 /* Floaty.framework */,
 				D4FB696B205D618100CBB17E /* Cartography.framework */,
 				D4FB69602050358300CBB17E /* Realm.framework */,
 			);
@@ -247,12 +251,14 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Cartography.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Floaty.framework",
 			);
 			name = "Carthage ";
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Realm.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RealmSwift.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Cartography.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Floaty.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -339,6 +345,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -382,6 +389,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
