@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Floaty
 
 class TopViewController: UICollectionViewController {
 
@@ -19,25 +20,25 @@ class TopViewController: UICollectionViewController {
 
     override func loadView() {
         self.view = UIView()
-        self.navigationItem.title = "title"
+        self.navigationItem.title = "Werderd"
         self.collectionView = self.newCollectionView()
         self.collectionView!.backgroundColor = .white
 
-        let button = UIButton()
-        button.setTitle("Tap Me!", for: .normal)
-        button.backgroundColor = .white
-        button.setTitleColor(.black, for: .normal)
-        button.frame = CGRect(
-            origin: CGPoint(x: 100, y: 400),
-            size: CGSize(width: 100, height: 50)
-        )
-        button.addTarget(
-            self,
-            action: #selector(tapped),
-            for   : .touchUpInside
-        )
+//        let button = UIButton()
+//        button.setTitle("Tap Me!", for: .normal)
+//        button.backgroundColor = .white
+//        button.setTitleColor(.black, for: .normal)
+//        button.frame = CGRect(
+//            origin: CGPoint(x: 100, y: 400),
+//            size: CGSize(width: 100, height: 50)
+//        )
+//        button.addTarget(
+//            self,
+//            action: #selector(tapped),
+//            for   : .touchUpInside
+//        )
 
-        self.view.addSubview(button)
+//        self.view.addSubview(button)
 
 //        collectionView.translatesAutoresizingMaskIntoConstraints = false
 //        collectionView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
@@ -45,25 +46,25 @@ class TopViewController: UICollectionViewController {
 //        collectionView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
 //        collectionView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
 
-        self.navigationItem.setRightBarButton(
-            UIBarButtonItem(
-                barButtonSystemItem: UIBarButtonSystemItem.add,
-                target             : self,
-                action             : #selector(add)
-            ),
-            animated           : true
-        )
+//        self.navigationItem.setRightBarButton(
+//            UIBarButtonItem(
+//                barButtonSystemItem: UIBarButtonSystemItem.add,
+//                target             : self,
+//                action             : #selector(add)
+//            ),
+//            animated           : true
+//        )
+
+        let floaty = Floaty()
+        floaty.fabDelegate = self
+        floaty.buttonColor = .base
+        floaty.plusColor   = .white
+        // floaty.addItem(title: "Hello, World!")
+        self.view.addSubview(floaty)
     }
 
     @objc func tapped() {
         WerderdTypeModel.default.types = ["wassen"]
-    }
-
-    @objc func add() {
-        let vc = AddWordViewController()
-//        vc.modalPresentationStyle = .fullScreen
-//        vc.modalTransitionStyle   = .flipHorizontal
-        self.present(vc, animated: true)
     }
 
     override func viewDidLoad() {
@@ -122,5 +123,14 @@ extension TopViewController {
         collectionView.backgroundColor = .black
 
         return collectionView
+    }
+}
+
+extension TopViewController: FloatyDelegate {
+    func emptyFloatySelected(_ floaty: Floaty) {
+        let vc = AddWordViewController()
+        //        vc.modalPresentationStyle = .fullScreen
+        //        vc.modalTransitionStyle   = .flipHorizontal
+        self.present(vc, animated: true)
     }
 }
