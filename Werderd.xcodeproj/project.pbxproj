@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC26A0B9FCB4E515DAE26638 /* UINavigationController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC26AC3A15C661FEC0EED29A /* UINavigationController+extension.swift */; };
 		D4AD53E21F45F61600B3AB1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AD53E11F45F61600B3AB1B /* AppDelegate.swift */; };
 		D4AD53E41F45F61600B3AB1B /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AD53E31F45F61600B3AB1B /* TopViewController.swift */; };
 		D4AD53E91F45F61600B3AB1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4AD53E81F45F61600B3AB1B /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC26AC3A15C661FEC0EED29A /* UINavigationController+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+extension.swift"; sourceTree = "<group>"; };
 		D4AD53DE1F45F61600B3AB1B /* Werderd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Werderd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4AD53E11F45F61600B3AB1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4AD53E31F45F61600B3AB1B /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +69,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC26A0F85C4FC85462C13455 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BC26AC3A15C661FEC0EED29A /* UINavigationController+extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		D4AD53D51F45F61600B3AB1B = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +105,7 @@
 				D4AD53E81F45F61600B3AB1B /* Assets.xcassets */,
 				D4FB6962205189E200CBB17E /* Models */,
 				D4AD53ED1F45F61600B3AB1B /* Info.plist */,
+				BC26A0F85C4FC85462C13455 /* Extension */,
 			);
 			path = Werderd;
 			sourceTree = "<group>";
@@ -276,6 +287,7 @@
 				D4FB6967205985A900CBB17E /* Colors.swift in Sources */,
 				D4FB696420518A5E00CBB17E /* WerderdType.swift in Sources */,
 				D4AD53E21F45F61600B3AB1B /* AppDelegate.swift in Sources */,
+				BC26A0B9FCB4E515DAE26638 /* UINavigationController+extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

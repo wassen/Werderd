@@ -17,14 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let topViewController = TopViewController()
-        let navigationViewController = UINavigationController(rootViewController: topViewController)
-        navigationViewController.navigationBar.barTintColor = .main
-        navigationViewController.navigationBar.isTranslucent = false;
-        let textAttributes = [
-            NSAttributedStringKey.foregroundColor: UIColor.white
-        ]
+        let navigationViewController = UINavigationController.default(rootViewController: topViewController)
 
-        navigationViewController.navigationBar.titleTextAttributes = textAttributes
         self.window?.rootViewController = navigationViewController
         self.window?.makeKeyAndVisible()
 
