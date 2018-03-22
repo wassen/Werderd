@@ -129,8 +129,9 @@ extension TopViewController {
 extension TopViewController: FloatyDelegate {
     func emptyFloatySelected(_ floaty: Floaty) {
         let vc = AddWordViewController()
+        let nc = UINavigationController(rootViewController: vc)
         //        vc.modalPresentationStyle = .fullScreen
         //        vc.modalTransitionStyle   = .flipHorizontal
-        self.present(vc, animated: true)
+        self.present(nc, animated: true)
     }
 }

@@ -15,7 +15,7 @@ class AddWordViewController: UIViewController {
     override func loadView(){
         self.view = UIView()
         self.okButton = UIButton()
-        self.okButton.backgroundColor = .white
+        self.okButton.backgroundColor = .main
         self.okButton.setTitle("button", for: .normal)
 
         self.okButton.addTarget(
@@ -32,7 +32,7 @@ class AddWordViewController: UIViewController {
             okButton.centerY == view.centerY
         }
 
-        self.view.backgroundColor = .cyan
+        self.view.backgroundColor = .white
     }
 
     @objc func tapped() {
