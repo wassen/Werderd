@@ -25,14 +25,23 @@ class AddWordViewController: UIViewController {
         )
 
         self.view.addSubview(okButton)
-        constrain(self.okButton, self.view) { okButton, view in
+
+        let textField = UITextField()
+        textField.backgroundColor = .base
+        self.view.addSubview(textField)
+
+        constrain(self.okButton, textField, self.view) { okButton, textField, view in
 //            okButton.width   == 100
 //            okButton.height  == 100
+            textField.centerX == okButton.centerX
+            textField.centerY == okButton.centerY
             okButton.centerX == view.centerX
             okButton.centerY == view.centerY
         }
 
         self.view.backgroundColor = .white
+
+        self.navigationItem.title = "New word"
     }
 
     @objc func tapped() {

@@ -8,6 +8,7 @@
 
 import UIKit
 import Floaty
+import Cartography
 
 class TopViewController: UICollectionViewController {
 
@@ -101,6 +102,19 @@ class TopViewController: UICollectionViewController {
             withReuseIdentifier: "Cell",
             for                : indexPath
         )
+        let textView = UITextView()
+        textView.text = WerderdTypeModel.default.types[indexPath.row]
+        textView.textColor = .white
+        textView.backgroundColor = .main
+        textView.textAlignment = .center
+        cell.addSubview(textView)
+        
+        constrain(textView, cell) { textView, cell in
+            textView.width   == 60
+            textView.height  == 30
+            textView.centerX == cell.centerX
+            textView.centerY == cell.centerY
+        }
         
         cell.backgroundColor = .main
         return cell
