@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 struct WerderdTypeModel {
     static var `default` = WerderdTypeModel()
@@ -21,6 +22,9 @@ struct WerderdTypeModel {
     }
 
     init() {
-        self.types = ["default"]
+        let realm = try! Realm()
+        let o = realm.objects(Struct.self)
+
+        self.types = o.map { $0.word }
     }
 }

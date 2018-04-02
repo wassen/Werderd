@@ -8,6 +8,7 @@
 
 import UIKit
 import Cartography
+import RealmSwift
 
 class AddWordViewController: UIViewController {
     var okButton: UIButton!
@@ -54,7 +55,20 @@ class AddWordViewController: UIViewController {
     @objc func tapped() {
         if let text = self.textField.text {
             WerderdTypeModel.default.types.append(text)
+
+            let realm = try! Realm()
+
+            let s = Struct()
+            s.word = text
+
+            try! realm.write() {
+                realm.add(s)
+            }
         }
         self.dismiss(animated: true)
     }
+}
+
+class Struct: Object {
+    @objc dynamic var word: String = ""
 }
