@@ -19,12 +19,10 @@
 import XCTest
 import RealmSwift
 
-protocol ThingWithPrivileges {
-    var permissions: List<Permission> { get }
+final class PermissionUser: Object {
+    // A class with a name that conflicts with an Object class from RealmSwift to verify
+    // that it doesn't break anything
 }
-
-extension RealmPermission: ThingWithPrivileges {}
-extension ClassPermission: ThingWithPrivileges {}
 
 class SwiftPermissionsAPITests: SwiftSyncTestCase {
     var userA: SyncUser!
@@ -113,8 +111,8 @@ class SwiftPermissionsAPITests: SwiftSyncTestCase {
         return url
     }
 
-    func createDefaultPermisisons<T: ThingWithPrivileges>(obj: T) {
-        var p = obj.permissions.findOrCreate(forRoleNamed: "everyone")
+    func createDefaultPermisisons(_ permissions: List<Permission>) {
+        var p = permissions.findOrCreate(forRoleNamed: "everyone")
         p.canCreate = false
         p.canRead = false
         p.canQuery = false
@@ -123,21 +121,21 @@ class SwiftPermissionsAPITests: SwiftSyncTestCase {
         p.canModifySchema = false
         p.canSetPermissions = false
 
-        p = obj.permissions.findOrCreate(forRoleNamed: "reader")
+        p = permissions.findOrCreate(forRoleNamed: "reader")
         p.canRead = true
         p.canQuery = true
 
-        p = obj.permissions.findOrCreate(forRoleNamed: "writer")
+        p = permissions.findOrCreate(forRoleNamed: "writer")
         p.canUpdate = true
         p.canCreate = true
         p.canDelete = true
 
-        p = obj.permissions.findOrCreate(forRoleNamed: "admin")
+        p = permissions.findOrCreate(forRoleNamed: "admin")
         p.canSetPermissions = true
     }
 
     func add(user: SyncUser, toRole roleName: String, inRealm realm: Realm) {
-        let user = realm.create(PermissionUser.self, value: [user.identity!], update: true)
+        let user = realm.create(RealmSwift.PermissionUser.self, value: [user.identity!], update: true)
         realm.create(PermissionRole.self, value: [roleName], update: true).users.append(user)
     }
 
@@ -146,7 +144,7 @@ class SwiftPermissionsAPITests: SwiftSyncTestCase {
 
     func testRealmRead() {
         let url = createRealm(name: "testRealmRead") { realm in
-            createDefaultPermisisons(obj: realm.objects(RealmPermission.self).first!)
+            createDefaultPermisisons(realm.permissions)
             add(user: userA, toRole: "reader", inRealm: realm)
         }
 
@@ -176,7 +174,7 @@ class SwiftPermissionsAPITests: SwiftSyncTestCase {
 
     func testRealmWrite() {
         let url = createRealm(name: "testRealmWrite") { realm in
-            createDefaultPermisisons(obj: realm.objects(RealmPermission.self).first!)
+            createDefaultPermisisons(realm.permissions)
             add(user: userA, toRole: "reader", inRealm: realm)
             add(user: userA, toRole: "writer", inRealm: realm)
             add(user: userB, toRole: "reader", inRealm: realm)
@@ -220,7 +218,7 @@ class SwiftPermissionsAPITests: SwiftSyncTestCase {
 
     func testClassRead() {
         let url = createRealm(name: "testClassRead") { realm in
-            createDefaultPermisisons(obj: realm.object(ofType: ClassPermission.self, forPrimaryKey: "SwiftSyncObject")!)
+            createDefaultPermisisons(realm.permissions(forType: SwiftSyncObject.self))
             add(user: userA, toRole: "reader", inRealm: realm)
         }
 

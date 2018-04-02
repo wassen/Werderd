@@ -1,3 +1,39 @@
+3.3.1 Release notes (2018-03-28)
+=============================================================
+
+Realm Object Server v3.0.0 or newer is required when using synchronized Realms.
+
+### Enhancements
+
+* Expose `RLMObject.object(forPrimaryKey:)` as a factory method for Swift so
+  that it is callable with recent versions of Swift.
+
+### Bugfixes
+
+* Exclude the RLMObject-derived Permissions classes from the types repored by
+  `Realm.Configuration.defaultConfiguration.objectTypes` to avoid a failed
+  cast.
+* Cancel pending `Realm.asyncOpen()` calls when authentication fails with a
+  non-transient error such as missing the Realm path in the URL.
+* Fix "fcntl() inside prealloc()" errors on APFS.
+
+3.3.0 Release notes (2018-03-19)
+=============================================================
+
+Realm Object Server v3.0.0 or newer is required when using synchronized Realms.
+
+### Enhancements
+
+* Add `Realm.permissions`, `Realm.permissions(forType:)`, and `Realm.permissions(forClassNamed:)` as convenience
+  methods for accessing the permissions of the Realm or a type.
+
+### Bugfixes
+
+* Fix `+[RLMClassPermission objectInRealm:forClass:]` to work for classes that are part of the permissions API,
+  such as `RLMPermissionRole`.
+* Fix runtime errors when applications define an `Object` subclass with the
+  same name as one of the Permissions object types.
+
 3.2.0 Release notes (2018-03-15)
 =============================================================
 
