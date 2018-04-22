@@ -9,11 +9,15 @@
 import UIKit
 import Cartography
 import RealmSwift
+import RxSwift
+import RxCocoa
+
 
 class AddWordViewController: UIViewController {
     var okButton: UIButton!
     var text: String?
     var textField: UITextField!
+    let disposeBag = DisposeBag()
 
     override func loadView(){
         self.view = UIView()
@@ -49,7 +53,14 @@ class AddWordViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-//        self.textField.delegate = self
+        
+        let viewModel = AddWordViewModel(
+            input: self.textField.rx.text.orEmpty.asDriver()
+        )
+        
+        viewModel.isValid
+            .drive(okButton.rx.isEnabled)
+            .disposed(by: disposeBag)
     }
 
     @objc func tapped() {
@@ -71,4 +82,16 @@ class AddWordViewController: UIViewController {
 
 class Struct: Object {
     @objc dynamic var word: String = ""
+}
+
+struct AddWordViewModel {
+    let word: Driver<String>
+    let isValid: Driver<Bool>
+    
+    init(input: Driver<String>) {
+        word = input
+        isValid = word.map {
+            !$0.isEmpty
+        }
+    }
 }
