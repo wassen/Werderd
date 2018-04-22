@@ -1,3 +1,4 @@
-github "kciter/Floaty" "4.0.0"
-github "realm/realm-cocoa" "v3.3.1"
+github "ReactiveX/RxSwift" "4.1.2"
+github "kciter/Floaty" "4.0.1"
+github "realm/realm-cocoa" "v3.4.0"
 github "robb/Cartography" "3.0.1"

@@ -12,6 +12,8 @@
 		D4AD53E41F45F61600B3AB1B /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AD53E31F45F61600B3AB1B /* TopViewController.swift */; };
 		D4AD53E91F45F61600B3AB1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4AD53E81F45F61600B3AB1B /* Assets.xcassets */; };
 		D4AD53F71F45F61600B3AB1B /* WerderdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AD53F61F45F61600B3AB1B /* WerderdTests.swift */; };
+		D4BA00A2208CB29C0056C5B8 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4BA00A1208CB29C0056C5B8 /* RxSwift.framework */; };
+		D4BA00A4208CB3EB0056C5B8 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4BA00A3208CB3EA0056C5B8 /* RxCocoa.framework */; };
 		D4D05646205EB4EF000F5CF2 /* Floaty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D05645205EB4EF000F5CF2 /* Floaty.framework */; };
 		D4FB69612050358300CBB17E /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4FB69602050358300CBB17E /* Realm.framework */; };
 		D4FB696420518A5E00CBB17E /* WerderdType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB696320518A5E00CBB17E /* WerderdType.swift */; };
@@ -40,6 +42,8 @@
 		D4AD53F21F45F61600B3AB1B /* WerderdTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WerderdTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4AD53F61F45F61600B3AB1B /* WerderdTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WerderdTests.swift; sourceTree = "<group>"; };
 		D4AD53F81F45F61600B3AB1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4BA00A1208CB29C0056C5B8 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		D4BA00A3208CB3EA0056C5B8 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		D4D05645205EB4EF000F5CF2 /* Floaty.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Floaty.framework; path = Carthage/Build/iOS/Floaty.framework; sourceTree = "<group>"; };
 		D4FB69602050358300CBB17E /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		D4FB696320518A5E00CBB17E /* WerderdType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WerderdType.swift; sourceTree = "<group>"; };
@@ -53,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4BA00A4208CB3EB0056C5B8 /* RxCocoa.framework in Frameworks */,
+				D4BA00A2208CB29C0056C5B8 /* RxSwift.framework in Frameworks */,
 				D4D05646205EB4EF000F5CF2 /* Floaty.framework in Frameworks */,
 				D4FB696C205D618100CBB17E /* Cartography.framework in Frameworks */,
 				D4FB69612050358300CBB17E /* Realm.framework in Frameworks */,
@@ -122,6 +128,8 @@
 		D4FB695F2050358300CBB17E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D4BA00A3208CB3EA0056C5B8 /* RxCocoa.framework */,
+				D4BA00A1208CB29C0056C5B8 /* RxSwift.framework */,
 				D4D05645205EB4EF000F5CF2 /* Floaty.framework */,
 				D4FB696B205D618100CBB17E /* Cartography.framework */,
 				D4FB69602050358300CBB17E /* Realm.framework */,
@@ -263,6 +271,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Cartography.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Floaty.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 			);
 			name = "Carthage ";
 			outputPaths = (
@@ -270,6 +280,8 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RealmSwift.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Cartography.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Floaty.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
