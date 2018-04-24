@@ -23,7 +23,7 @@ struct WerderdTypeModel {
 
     init() {
         let realm = try! Realm()
-        let o = realm.objects(Struct.self)
+        let o = realm.objects(Words.self)
 
         self.types = o.map { $0.word }
     }

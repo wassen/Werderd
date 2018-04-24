@@ -13,8 +13,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
+    func application(
+        // swiftlint:disable colon
+        _                             application  : UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?
+        // swiftlint:enable colon
+    ) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let topViewController = TopViewController()
         let navigationViewController = UINavigationController.default(rootViewController: topViewController)

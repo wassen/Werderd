@@ -10,20 +10,22 @@ import Foundation
 import UIKit
 
 extension UIColor {
-    static let main   = Colors.main.color
-    static let base   = Colors.base.color
-    static let accent = Colors.accent.color
+    static let main   = ColorCodes.main.color
+    static let base   = ColorCodes.base.color
+    static let accent = ColorCodes.accent.color
 }
 
-private enum Colors: String {
+private enum ColorCodes: String {
     case main   = "#3abc98"
     case base   = "#03D1AB"
     case accent = "#FFF44B"
 
     var color: UIColor {
         return UIColor(
+            // swiftlint: disable colon
             hex  : self.rawValue,
             alpha: 1.0
+            // swiftlint: enable colon
         )!
     }
 }
@@ -46,10 +48,12 @@ private extension UIColor {
         }
 
         self.init(
+            // swiftlint: disable colon
             red  : redHex / 255,
             green: greenHex / 255,
             blue : blueHex / 255,
             alpha: alpha
+            // swiftlint: enable colon
         )
     }
 }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BC26A0B9FCB4E515DAE26638 /* UINavigationController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC26AC3A15C661FEC0EED29A /* UINavigationController+extension.swift */; };
+		BC26A528E6EF9B5F5A77A8ED /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC26ACC399CB90C49345F350 /* Words.swift */; };
+		BC26A9AC5312156B6507C490 /* AddWordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC26A3B8C5CAF99A1BFD996E /* AddWordViewModel.swift */; };
 		D4AD53E21F45F61600B3AB1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AD53E11F45F61600B3AB1B /* AppDelegate.swift */; };
 		D4AD53E41F45F61600B3AB1B /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AD53E31F45F61600B3AB1B /* TopViewController.swift */; };
 		D4AD53E91F45F61600B3AB1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4AD53E81F45F61600B3AB1B /* Assets.xcassets */; };
@@ -33,7 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC26A3B8C5CAF99A1BFD996E /* AddWordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWordViewModel.swift; sourceTree = "<group>"; };
 		BC26AC3A15C661FEC0EED29A /* UINavigationController+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+extension.swift"; sourceTree = "<group>"; };
+		BC26ACC399CB90C49345F350 /* Words.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
 		D4AD53DE1F45F61600B3AB1B /* Werderd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Werderd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4AD53E11F45F61600B3AB1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4AD53E31F45F61600B3AB1B /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +87,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		BC26AE634DAA7C8A94BD578F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BC26A3B8C5CAF99A1BFD996E /* AddWordViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		D4AD53D51F45F61600B3AB1B = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +124,7 @@
 				D4FB6962205189E200CBB17E /* Models */,
 				D4AD53ED1F45F61600B3AB1B /* Info.plist */,
 				BC26A0F85C4FC85462C13455 /* Extension */,
+				BC26AE634DAA7C8A94BD578F /* ViewModels */,
 			);
 			path = Werderd;
 			sourceTree = "<group>";
@@ -141,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				D4FB696320518A5E00CBB17E /* WerderdType.swift */,
+				BC26ACC399CB90C49345F350 /* Words.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -300,6 +314,8 @@
 				D4FB696420518A5E00CBB17E /* WerderdType.swift in Sources */,
 				D4AD53E21F45F61600B3AB1B /* AppDelegate.swift in Sources */,
 				BC26A0B9FCB4E515DAE26638 /* UINavigationController+extension.swift in Sources */,
+				BC26A9AC5312156B6507C490 /* AddWordViewModel.swift in Sources */,
+				BC26A528E6EF9B5F5A77A8ED /* Words.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

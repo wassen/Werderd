@@ -1,2 +1,10 @@
 excluded:
   - Carthage/
+
+custom_rules:
+  dont_import_uikit_in_viewmodel:
+    included: ".*ViewModel\\.swift"
+    name: "Don't import UIKit in ViewModel"
+    regex: "^import UIKit$"
+    message: "Don't import UIKit in ViewModel"
+    severity: error

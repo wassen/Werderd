@@ -10,56 +10,31 @@ import UIKit
 import Cartography
 import RealmSwift
 import RxSwift
-import RxCocoa
-
 
 class AddWordViewController: UIViewController {
-    var okButton: UIButton!
-    var text: String?
-    var textField: UITextField!
+    weak var addButton: UIButton!
+    weak var textField: UITextField!
     let disposeBag = DisposeBag()
 
     override func loadView(){
-        self.view = UIView()
-        self.okButton = UIButton()
-        self.okButton.backgroundColor = .main
-        self.okButton.setTitle("button", for: .normal)
+        self.view = self.newView()
 
-        self.okButton.addTarget(
-            self,
-            action: #selector(tapped),
-            for   : .touchUpInside
-        )
+        self.addButton = self.loadAddButton()
+        self.textField = self.loadTextField()
 
-        self.view.addSubview(okButton)
-
-        self.textField = UITextField()
-        textField.backgroundColor = .base
-        self.view.addSubview(textField)
-
-        constrain(self.okButton, textField, self.view) { okButton, textField, view in
-//            okButton.width   == 100
-//            okButton.height  == 100
-            textField.centerX == view.centerX
-            textField.centerY == view.centerY / 2
-            textField.width   == view.width / 4
-            okButton.centerX  == view.centerX
-            okButton.centerY  == view.centerY
-        }
-
-        self.view.backgroundColor = .white
+        self.addConstraint()
 
         self.navigationItem.title = "New word"
     }
-    
+
     override func viewDidLoad() {
-        
         let viewModel = AddWordViewModel(
-            input: self.textField.rx.text.orEmpty.asDriver()
+            word: self.textField.rx.text.orEmpty.asDriver(),
+            tap: self.addButton.rx.tap.asDriver()
         )
-        
+
         viewModel.isValid
-            .drive(okButton.rx.isEnabled)
+            .drive(addButton.rx.isEnabled)
             .disposed(by: disposeBag)
     }
 
@@ -69,7 +44,7 @@ class AddWordViewController: UIViewController {
 
             let realm = try! Realm()
 
-            let s = Struct()
+            let s = Words()
             s.word = text
 
             try! realm.write() {
@@ -80,18 +55,49 @@ class AddWordViewController: UIViewController {
     }
 }
 
-class Struct: Object {
-    @objc dynamic var word: String = ""
-}
+// MARK: private function for loadView
+extension AddWordViewController {
+    private func newView() -> UIView {
+        let view = UIView()
 
-struct AddWordViewModel {
-    let word: Driver<String>
-    let isValid: Driver<Bool>
-    
-    init(input: Driver<String>) {
-        word = input
-        isValid = word.map {
-            !$0.isEmpty
+        view.backgroundColor = .white
+
+        return view
+    }
+
+    private func loadAddButton() -> UIButton {
+        let addButton = UIButton()
+
+        addButton.backgroundColor = .main
+        addButton.setTitle("button", for: .normal)
+        addButton.addTarget(
+            self,
+            action: #selector(tapped),
+            for   : .touchUpInside
+        )
+
+        self.view.addSubview(addButton)
+
+        return addButton
+    }
+
+    private func loadTextField() -> UITextField {
+        let textField = UITextField()
+
+        textField.backgroundColor = .base
+
+        self.view.addSubview(textField)
+
+        return textField
+    }
+
+    private func addConstraint() {
+        constrain(self.addButton, self.textField, self.view) { okButton, textField, view in
+            textField.centerX == view.centerX
+            textField.centerY == view.centerY / 2
+            textField.width   == view.width / 4
+            okButton.centerX  == view.centerX
+            okButton.centerY  == view.centerY
         }
     }
 }
