@@ -3,23 +3,16 @@
 // Copyright (c) 2018 Kazuki Asayama. All rights reserved.
 //
 
+import RealmSwift
 import RxCocoa
+import RxSwift
 
 struct AddWordViewModel {
-    // swiftlint disable colon
+    // swiftlint:disable:next colon
     let word   : Driver<String>
     let isValid: Driver<Bool>
-    // swiftlint enable colon
-
-//        input.doneTap
-//            .emit(onNext: { [weak self] _ in
-//                guard let `self` = self else { return }
-//
-//                self.dependency.wireframe.goToResultScreen(
-//                    with: selectedBadgesRelay.value
-//                )
-//            })
-//            .disposed(by: self.disposeBag)
+    let tap    : Signal<Void>
+    let disposeBag = DisposeBag()
 
     init(
         word: Driver<String>,
@@ -29,9 +22,19 @@ struct AddWordViewModel {
         self.isValid = word.map {
             !$0.isEmpty
         }
+        self.tap = tap
+        self.tap
+            .withLatestFrom(word)
+            .emit(onNext: { word in
+                let realm = try! Realm()
+                let s = Words()
 
-        tap.emit {
+                s.word = word
 
-        }
+                try! realm.write() {
+                    realm.add(s)
+                }
+                WerderdTypeModel.default.types.append(word)
+            }).disposed(by: disposeBag)
     }
 }

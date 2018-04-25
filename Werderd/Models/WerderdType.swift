@@ -11,7 +11,6 @@ import RealmSwift
 
 struct WerderdTypeModel {
     static var `default` = WerderdTypeModel()
-
     var types: [String] {
         didSet {
             NotificationCenter.default.post(
